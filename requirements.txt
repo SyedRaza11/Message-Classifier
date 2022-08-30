@@ -1,0 +1,8 @@
+nltk
+spacy
+pandas
+numpy
+stopword
+wordnet
+Counter
+matplotlib
