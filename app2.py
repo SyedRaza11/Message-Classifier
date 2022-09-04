@@ -128,28 +128,28 @@ def main ():
           col1, col2=st.columns(2)
           
           with col1:  
-          Label = st.selectbox('Select label', full_df['Label'].unique())
-          button = st.button('show results')
-          if Label =="Spam":
-             df= (
-             pd.DataFrame(cnt_most_common_Spam.most_common(15),columns=['Word','Count'])
-            .sort_values('Count', ascending=1))
-             st.subheader('Common Words found in Spam')
-             st.bar_chart(data=df,x='Word',y='Count')           
+            Label = st.selectbox('Select label', full_df['Label'].unique())
+            button = st.button('show results')
+            if Label =="Spam":
+               df= (
+               pd.DataFrame(cnt_most_common_Spam.most_common(15),columns=['Word','Count'])
+              .sort_values('Count', ascending=1))
+               st.subheader('Common Words found in Spam')
+               st.bar_chart(data=df,x='Word',y='Count')           
                           
               
-          else:
-              md= (
-              pd.DataFrame(cnt_most_common_Non_Spam.most_common(15),columns=['Word','Count'])
-             .sort_values('Count', ascending=1))
-              st.subheader('Common Words found in Non-Spam')
-              st.bar_chart(data=md,x='Word',y='Count')
+            else:
+                md= (
+                pd.DataFrame(cnt_most_common_Non_Spam.most_common(15),columns=['Word','Count'])
+               .sort_values('Count', ascending=1))
+                st.subheader('Common Words found in Non-Spam')
+                st.bar_chart(data=md,x='Word',y='Count')
            
 
 
-          with col2:
-             col2.subheader('Messages over Months')
-             col2.line_chart(data=m,)
+            with col2:
+               col2.subheader('Messages over Months')
+               col2.line_chart(data=m,)
              
              
               
